@@ -1,3 +1,5 @@
+<?php require_once "config/loader.php" ?>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
