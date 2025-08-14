@@ -12,16 +12,18 @@
 
 <body>
   <div class="container" id="container">
+        <!-- sign up-->
     <div class="form-container sign-up">
-      <form>
+      <form method="POST" action="action/sign-up.php">
         <h1>Create Account</h1>
-        <input type="text" placeholder="Username">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="MobileNumber">
-        <input type="password" placeholder="Password">
-        <button>Sign Up</button>
+        <input type="text" name="username" placeholder="Username">
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="mobile" placeholder="MobileNumber">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit" name="signup">Sign Up</button>
       </form>
     </div>
+    <!-- sign in -->
     <div class="form-container sign-in">
       <form>
         <h1>Sign In</h1>
