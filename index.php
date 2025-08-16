@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <title>Login</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -25,15 +27,20 @@
     </div>
     <!-- sign in -->
     <div class="form-container sign-in">
-      <form>
+      <form method="POST" action="action/sign-in.php">
         <h1>Sign In</h1>
-        <input type="email" placeholder="Mobile/Username/Email">
-        <input type="password" placeholder="Password">
+        <input type="text" name="key" placeholder="Mobile/Username/Email">
+        <input type="password" name="password" placeholder="Password">
         <a href="#">Forget your Password?</a>
         <div style="display: inline;">
-            <button>Sign In</button>
+            <button type="submit" name="signin">Sign In</button>
             <a href="otp.php">Send OTP</a>
         </div>
+        <?php if(isset($_GET["notuser"])) { ?>
+          <p style="width:100%" class="alert alert-danger">user not found!</p>
+        <?php } else if(isset($_GET["loggined"])) { ?>
+          <p style="width:100%" class="alert alert-success">login to website</p>
+        <?php } ?>
       </form>
     </div>
     <div class="toggle-container">
